@@ -5,6 +5,7 @@ import matplotlib
 import matplotlib.patches as mpatches
 import numpy as np
 import itertools
+from textblob import TextBlob
 
 
 def stats(stats_input):
@@ -81,3 +82,6 @@ def display_confusion_matrix(cm, classes, normalize=False, title='Confusion matr
     plt.show()
     print(cm)
 
+
+def get_ngrams(text):
+    return TextBlob(text).ngrams(2)
